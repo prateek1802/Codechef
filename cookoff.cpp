@@ -1,24 +1,26 @@
-#include<iostream>
-#include<cstring>
+#include<bits/stdc++.h>
 #include<algorithm>
 using namespace std;
 
 int main()
 {
     int testcase;
-    cin>>testcase;
+    scanf("%d",&testcase);
     while(testcase--)
     {
         int n,ck=0,s=0,e=0,m=0,em=0,mh=0,h=0;
-        cin>>n;
-        string arr[n];
+        scanf("%d",&n);
+        vector<string> arr;
 
         for(int i=0;i<n;++i)
         {
-            cin>>arr[i];
+            string s;
+            cin>>s;
+            arr.push_back(s);
         }
 
-        for(int i=0;i<n;++i)
+        int x=arr.size();
+        for(int i=0;i<x;++i)
         {
             if(arr[i]=="cakewalk")
             {
@@ -35,33 +37,23 @@ int main()
                 e++;
             }
 
-            else if(arr[i]=="easy-medium")
+            else if(arr[i]=="easy-medium"||arr[i]=="medium")
             {
                 em++;
             }
 
-            else if(arr[i]=="medium")
-            {
-                m++;
-            }
-
-            else if(arr[i]=="medium-hard")
+            else if(arr[i]=="hard"||arr[i]=="medium-hard")
             {
                 mh++;
             }
-
-            else if(arr[i]=="hard")
-            {
-                h++;
-            }
         }
-        if(ck==1&&s==1&&e==1&&(m==1||em==1)&&(mh==1||h==1))
+        if(ck>0&&s>0&&e>0&&em>0&&mh>0)
         {
-            cout<<"Yes"<<endl;
+            printf("Yes\n");
         }
 
         else
-            cout<<"No"<<endl;
+            printf("No\n");
     }
     return 0;
 }
