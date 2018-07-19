@@ -32,19 +32,19 @@ int main()
         }
 
         int k=ceil((double)s/h);
-        
+
         while(k)
         {
             for(int i=0;i<n;i++)
             {
                 b[i]=a[i];
             }
-            
+
             for(int i=0;i<n;i++)
             {
                 b[i]=ceil((double)b[i]/k);
             }
-            
+
             if(summ(b,n)<=h)
             {
                 cout<<k<<endl;
