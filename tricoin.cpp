@@ -2,23 +2,24 @@
 #include<math.h>
 using namespace std;
 
+long int sum(long int h)
+{
+    return (h*(h+1))/2;
+}
+
 int main()
 {
     unsigned int n,t;
     cin>>t;
     while(t--)
     {
-        unsigned long long int n,h;
+        long int n,h=1;
         cin>>n;
-
-        for(long long int i=n;i>=0;i--)
+        while(sum(h)<=n)
         {
-            if((i*(i+1))/2<=n)
-            {
-                cout<<i<<endl;
-                break;
-            }
+            h++;
         }
+        cout<<h-1<<endl;
     }
     return 0;
 }
